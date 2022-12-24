@@ -1,0 +1,53 @@
+
+//c
+int lengthOfLongestSubstring(char * s){
+	char*head =s,*cur=s;
+	int max=0;
+	while(*cur)
+	{
+		for(char *p=head;p<cur;p++)
+		{
+			
+			if(*p==*cur)
+			{
+				head=p+1;
+				break;
+
+			}
+		}
+		max=cur-head+1>max?cur-head+1:max;
+	
+		cur++;
+	}
+
+
+	return max;
+
+}
+
+
+//c++
+int lengthOfLongestSubstring(string s) {
+	int start(0),end(0),length(0);
+	int len(s.size());
+	while(end<len)
+	{
+		for(int index=start;index<end;index++)
+		{
+			if(s[index]==s[end])
+			{
+				start=index+1;
+				break;
+				
+			}
+
+		}
+		end++;
+		length=max(lenght,end-start+1);
+		
+	}	
+	return length;
+
+
+
+}
